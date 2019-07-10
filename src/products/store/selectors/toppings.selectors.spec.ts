@@ -14,13 +14,13 @@ describe('ToppingsReducer Selectors', () => {
   const toppings: Topping[] = [
     { id: 1, name: 'bacon' },
     { id: 2, name: 'pepperoni' },
-    { id: 3, name: 'tomato' },
+    { id: 3, name: 'tomato' }
   ];
 
   const entities = {
     1: toppings[0],
     2: toppings[1],
-    3: toppings[2],
+    3: toppings[2]
   };
 
   beforeEach(() => {
@@ -28,9 +28,9 @@ describe('ToppingsReducer Selectors', () => {
       imports: [
         StoreModule.forRoot({
           ...fromRoot.reducers,
-          products: combineReducers(fromReducers.reducers),
-        }),
-      ],
+          products: combineReducers(fromReducers.reducers)
+        })
+      ]
     });
 
     store = TestBed.get(Store);

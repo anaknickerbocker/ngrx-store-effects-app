@@ -23,12 +23,10 @@ export class PizzaExistsGuards implements CanActivate {
   }
 
   hasPizza(id: number): Observable<boolean> {
-    return this.store
-      .select(fromStore.getPizzasEntities)
-      .pipe(
-        map((entities: { [key: number]: Pizza }) => !!entities[id]),
-        take(1)
-      );
+    return this.store.select(fromStore.getPizzasEntities).pipe(
+      map((entities: { [key: number]: Pizza }) => !!entities[id]),
+      take(1)
+    );
   }
 
   checkStore(): Observable<boolean> {
